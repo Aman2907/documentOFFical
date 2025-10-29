@@ -1,0 +1,11 @@
+
+
+// function RotateK(arr, k , n ){
+//     k = k % n;
+//     let temp = new Array(n);
+
+//     for(let i = 0 ; i < n; i++) {
+//       temp[i] = arr[(i + k) % n];
+//     }
+//     return temp;
+// }

@@ -1,0 +1,46 @@
+let nums = [2, 2, 2, 3, 5, 5, 8]; lowerBound() (Linear Approach)
+let x = 4;
+🧠 Explanation:
+You are finding the “lower bound” of a number x in a sorted array nums.
+🔹 Lower Bound means →
+The index of the first element in the sorted array which is ≥ x.
+If no such element exists, you return nums.length.
+
+function lowerBound(nums, x){
+   for(let i = 0; i <nums.length; i++ ){
+       if(nums[i] >= x){
+           return i;
+       }
+   }
+   return nums.length;
+}
+console.log(lowerBound(nums, x))
+
+O(n) time complexity
+space will be no extra 0(1)
+
+
+
+let nums= [1,2,2,3, 5,6,7,7,8,9], x = 2
+
+function linearSrc(nums, x){
+    let start = 0;
+    let end = nums.length - 1;
+    let ans = nums.length;
+    
+    while(start <= end){
+        let mid = Math.floor((start + end) / 2);
+        
+        if(nums[mid] >= x){
+            ans = mid;
+            end = mid - 1;
+        }else{
+            start = mid + 1;
+        }
+    }
+    return ans;
+}
+
+console.log(linearSrc(nums, x))
+O(log n) TC (binary search)
+O(1) space

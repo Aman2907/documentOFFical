@@ -1,0 +1,26 @@
+// Input: n = 13
+// Binary: 1101
+// Output: 3
+
+let n = 13
+function countBit(n){
+    let count = 0;
+    while(n > 0){
+        if(n & 1) count++;
+        n = n >> 1;
+    }
+    return count;
+}
+
+
+optimize way
+function countSetBits(n) {
+  let count = 0;
+  while (n > 0) {
+    n = n & (n - 1); // removes one set bit
+    count++;         // count that bit
+  }
+  return count;
+}
+
+console.log(countSetBits(13)); // 3

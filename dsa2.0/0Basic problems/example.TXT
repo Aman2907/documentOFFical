@@ -1,0 +1,145 @@
+// let str = "Ravi"
+// 1 ReverseString problem
+// function reverseString(str) {
+//     return str.split("").reverse().join("")
+// }
+// console.log(reverseString(str)); // "namA"
+
+// function reverseString(str){
+//     let reverseStr = "";
+//     for(let i = str.length - 1; i >= 0; i--){
+//         console.log(str[i]);
+//         reverseStr = reverseStr + str[i];
+//         console.log(reverseStr);
+//     }
+// }
+// console.log(reverseString(str)); // "namA"
+
+
+
+// 2 Palindrome problem
+// let str = "madam";
+// function palidrom(str){
+//    let reverseStr = "";
+//    for(let i = str.length - 1; i >= 0; i--)  {
+//     reverseStr = reverseStr + str[i];
+//    }
+//    if(str === reverseStr) {
+//     return true;
+//    }else{
+//     return false
+//    }
+// }
+// console.log(palidrom(str)); // true
+// 2 Palindrome problem
+// function palindrome(str){
+//     let i = 0;
+//     let j = str.length - 1;
+//     while(i < j) {
+//          if(str[i] !== str[j])   return false;
+//             i++;
+//             j--;
+//     }
+//     return true; 
+// }
+// let str = "madam";
+// console.log(palindrome(str));
+
+
+
+
+
+// 3 vowels in string
+// let str = "AMAN eSharma";
+// function vowelPresent(str){
+//     let vowles = "aeiouAEIOU";
+//     let count = 0;
+//     for(let i = 0; i < str.length; i++ ){
+//         if(vowles.includes(str[i])){
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+// console.log(vowelPresent(str)); 
+
+
+
+// Count occurrences of each character in a string.
+// let str = "Hello World";
+// function countOCC(str) {
+
+//     let freq = {};
+//     for(let char of str) {
+//         freq[char] = (freq[char] || 0) + 1;
+//     }
+//     return freq;
+// }
+// console.log(countOCC(str)); // { H: 1, e: 1, l: 3, o: 2, ' ': 1, W: 1, r: 1, d: 1 }
+// console.log(coutocc("Hello World", "l")); // 3
+// function coutocc(str, char) {
+//     let count = 0;
+//     for(let i = 0; i < str.length; i++) {
+//         if(str[i] === char) {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+
+
+// Remove duplicate characters from a string.
+
+// function removeDuplicates(str) {
+//     let seen = new Set();
+//     let result = '';
+//     for (let char of str) {
+//         if (!seen.has(char)) {
+//             seen.add(char);
+//             result += char;
+//         }
+//     }
+//     return result;
+
+
+// function removerDub(str){
+//     return [...new Set(str)].join('');
+// }
+// console.log(removerDub("programming")); // "progamin"
+
+
+
+// let leap = 2024;
+// function isLeapYear(year){
+//     if((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+//         return true;
+//     }else {
+//         return false;
+//     }
+// }
+// console.log(isLeapYear(leap)); // true
+
+
+
+// your code goes here to convert to capital number
+
+// let str = "aman sharma is good";
+// function capStr(str){
+//     let words = str.split("");
+//     let result = words.map(word => {
+//         return word.charAt(0).toUpperCase() + word.slice(1);
+//     })
+//     return result.join("")
+// }
+// console.log(capStr(str))
+
+
+
+
+
+function reverseAmn(str){
+    let reversestr = "";
+}
+console.log(reverseAmn("Aman"))

@@ -1,0 +1,59 @@
+You are asked to find the floor and ceil of a given number x in a sorted array nums.
+let nums =[3, 4, 4, 7, 8, 10], x= 5
+✅ Output: [4, 7]
+
+
+function floorCeil(nums, x){
+    let floor = -1, ceil = -1;
+    
+    for(let i = 0 ; i < nums.length; i++){
+        
+        if(nums[i]  <= x) {
+            floor = nums[i];
+        }
+        if(nums[i] >= x && ceil === -1){
+            ceil = nums[i]
+        }
+    }
+    return [floor, ceil];
+}
+
+console.log(floorCeil(nums, x))
+
+
+USING BINARY search
+function floorAndCeil(nums, x) {
+    let floor = -1, ceil = -1;
+
+    // Binary search for floor
+    let low = 0, high = nums.length - 1;
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+        if (nums[mid] <= x) {
+            floor = nums[mid]; // possible floor
+            low = mid + 1;     // search right for bigger
+        } else {
+            high = mid - 1;    // search left
+        }
+    }
+
+    // Binary search for ceil
+    low = 0; high = nums.length - 1;
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+        if (nums[mid] >= x) {
+            ceil = nums[mid];  // possible ceil
+            high = mid - 1;    // search left for smaller
+        } else {
+            low = mid + 1;     // search right
+        }
+    }
+
+    return [floor, ceil];
+}
+
+// Test cases
+console.log(floorAndCeil([3,4,4,7,8,10], 5));  // [4, 7]
+console.log(floorAndCeil([3,4,4,7,8,10], 8));  // [8, 8]
+console.log(floorAndCeil([3,4,4,7,8,10], 2));  // [-1, 3]
+console.log(floorAndCeil([3,4,4,7,8,10], 12)); // [10, -1]

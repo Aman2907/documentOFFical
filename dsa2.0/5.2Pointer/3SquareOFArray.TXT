@@ -1,0 +1,56 @@
+// Input: nums = [-4,-1,0,3,10]
+// Output: [0,1,9,16,100]
+
+let nums = [-4,-1,0,3,10]
+
+function square(nums){
+    let ans = []
+    for(let i = 0 ; i < nums.length; i++){
+       ans.push(nums[i] * nums[i])
+    }
+    ans.sort((a, b) => a - b)
+    return ans
+}
+
+console.log(square(nums))
+O(n) tc
+O(n) sc
+
+function square(nums){
+   let ans = nums.map(num => num * num);
+   ans.sort((a, b) => a - b)
+}
+nlog n tc
+o(n) sc
+
+
+
+2 pointer appraoch
+// Input: nums = [-4,-1,0,3,10]
+// Output: [0,1,9,16,100]
+
+let nums = [-4,-1,0,3,10]
+
+function square(nums){
+   let left  = 0;
+   let right = nums.length - 1;
+   let res = [];
+   
+   while(left <= right)
+   {
+      let ll = nums[left] ** 2;
+      let rr =  nums[right] ** 2;
+     if(ll > rr){
+        res.unshift(ll); 
+        ll++
+     }else{
+         res.unshift(rr);
+         rr++
+     }
+   }
+
+}
+
+console.log(square(nums))
+on tc
+on sc

@@ -1,0 +1,13 @@
+let str = "hello world"
+
+function reverseWords(str){
+    
+  let words = str.trim().split(" ").reverse().join(" ");
+  
+  return words;
+}
+
+console.log(reverseWords(str))
+
+time com o(n)
+space com o (n)

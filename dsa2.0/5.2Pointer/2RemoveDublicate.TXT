@@ -1,0 +1,42 @@
+let nums = [0,0,1,1,1,2,2,3,3,4]
+// 
+brute
+function uniqueNumber(nums){
+    
+    if (nums.length === 0) return 0;
+    
+    let unique = [];
+    unique.push(nums[0])
+    
+    for(let i = 1; i < nums.length ; i++){
+        if(nums[i] !== nums[i - 1]){ 
+            unique.push(nums[i])
+        }
+    }
+    
+    for(let i = 0 ; i < unique.length; i++){
+        nums[i] = unique[i]
+    }
+    return unique.length;
+}
+
+console.log(uniqueNumber(nums))
+✅ Time Complexity: O(n)
+✅ Space Complexity: O(n) — uses extra array unique
+
+
+optimise
+two pointer
+function uniqueNumber(nums){
+    if(nums.length === 0) return 0;
+   let i = 0;
+   for(let j = 1; j < nums.length ; j++){
+       if(nums[j] !== nums[i]){ // here we check nums[i] with nums[j] coz i will be unique always j has to be  
+           i++;                                                //unique otherwise it will not go inside the loop
+           nums[i] = nums[j];
+       }
+   }
+   return i+1;
+}
+✅ Time Complexity: O(n)
+✅ Space Complexity: O(1) — in-place

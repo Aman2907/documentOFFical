@@ -1,0 +1,47 @@
+// let str = "AmanSharma";
+
+// function stringSS(str) {
+//     let vowels = "aeiou";
+//     let consonants = "";
+//     let vowelChars = "";
+
+//     for (let i = 0; i < str.length; i++) {
+//         let char = str[i].toLowerCase();
+//         if (vowels.includes(char)) {
+//             vowelChars += str[i];   // add to vowels
+//         } else {
+//             consonants += str[i];   // add to consonants
+//         }
+//     }
+
+//     return { vowels: vowelChars, consonants: consonants };
+// }
+
+// console.log(stringSS(str));
+// // Output: { vowels: 'Aaaa', consonants: 'mnShrm' }
+
+
+
+
+
+let str = "AmanSharma";
+
+function stringSS(str) {
+    let vowels = "aeiou";
+    let consonants = [];
+    let vowelChars = [];
+
+    for (let i = 0; i < str.length; i++) {
+        let char = str[i].toLowerCase();
+        if (vowels.includes(char)) {
+            vowelChars.push(str[i])   // add to vowels
+        } else {
+           consonants.push(str[i])    // add to consonants
+        }
+    }
+
+    return { vowels: vowelChars, consonants: consonants };
+}
+
+console.log(stringSS(str));
+// Output: { vowels: 'Aaaa', consonants: 'mnShrm' }

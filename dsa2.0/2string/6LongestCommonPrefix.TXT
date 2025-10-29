@@ -1,0 +1,64 @@
+function longestCommonPrefix(strs) {
+    // Step 0: Edge case
+    if (!strs.length) return "";
+
+    // Step 1: Sort the array
+    strs.sort();
+    console.log("Sorted array:", strs);
+
+    // Step 2: Take first and last strings
+    let first = strs[0];
+    let last = strs[strs.length - 1];
+    console.log("First string:", first);
+    console.log("Last string:", last);
+
+    // Step 3: Compare characters one by one
+    let i = 0;
+    while (i < first.length && first[i] === last[i]) {
+        console.log(`Matching char at index ${i}: ${first[i]}`);
+        i++;
+    }
+
+    // Step 4: Return the common prefix
+    let prefix = first.substring(0, i);
+    console.log("Longest Common Prefix:", prefix);
+    return prefix;
+}
+
+// ✅ Example usage
+console.log(longestCommonPrefix(["apple", "app", "car", "april"])); // Output: ""
+console.log(longestCommonPrefix(["flower", "flow", "flight"]));     // Output: "fl"
+console.log(longestCommonPrefix(["coding", "code", "coder", "codex"])); // Output: "cod"
+
+
+
+
+
+
+
+
+
+
+
+
+let str = ["flower","flow","floight"]
+
+
+function stringRev(str){
+    if(!str.length ) return "";
+    
+    let prefix = "";
+    for(let i = 0 ; i < str[0].length ; i++){
+        let char = str[0][i];
+        for(let j = 1; j < str.length ; j++){
+            if(i >= str[j].length || str[j][i] !== char ){
+                return prefix;
+            }
+        }
+        prefix = prefix + char;
+    }
+    return prefix;
+}
+
+
+console.log(stringRev(str))

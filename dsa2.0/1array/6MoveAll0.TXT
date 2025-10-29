@@ -1,0 +1,29 @@
+let arr = [2,4,1,0,0,5,0,9];
+
+// function moveZero(arr){
+//     return arr.sort((a, b) => b - a)
+// }
+
+function moveZero(arr){
+    
+    let temp = [];
+    for(let i = 0 ; i < arr.length ; i++){
+        if(arr[i] !== 0) {
+            temp.push(arr[i])
+        }
+    }
+    
+    let z = temp.length;
+
+    for(let i = 0 ; i < z ; i++){
+        arr[i] = temp[i];
+    }
+
+    for(let i = z; i < arr.length; i++){
+        arr[i] = 0;
+    }
+    return arr;
+   
+}
+
+console.log(moveZero(arr))

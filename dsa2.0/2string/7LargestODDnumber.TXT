@@ -1,0 +1,80 @@
+
+
+var largestOddNumber = function(num) {
+
+    let result = "";
+
+    for(let i = 0 ; i < num.length; i++){
+        let prefix = num.slice(0 , i + 1);
+        let lastDigit = prefix[prefix.length - 1];
+
+        if(parseInt(lastDigit) % 2 === 1){
+            result = prefix;
+        }
+    }
+    return result;
+};
+
+time compleixty 0 (n2)
+space complexity o (n)
+
+
+
+
+
+
+a bit better appraoch
+/**
+ * @param {string} num
+ * @return {string}
+ */
+var largestOddNumber = function(num) {
+
+    let result = "";
+
+    for(let i = 0 ; i < num.length; i++){
+        let digit = parseInt(num[i]);
+
+        if(digit % 2 === 1){
+            result = num.slice(0 , i  + 1)
+        }
+    }
+    return result;
+};
+
+
+
+
+best 
+/**
+ * @param {string} num
+ * @return {string}
+ */
+var largestOddNumber = function(num) {
+  
+  for(let i = num.length -  1; i >= 0 ; i--){
+    if(parseInt(num[i]) % 2 === 1){
+        return num.slice(0, i + 1);
+    }
+  }
+  return "";
+};
+
+only space change from previous one 0(1)
+
+
+
+
+pending best apprach
+var largestOddNumber = function(num) {
+  let i = num.length - 1;
+
+  // Move left until we find an odd digit
+  while (i >= 0 && (num[i] - '0') % 2 === 0) {
+    i--;
+  }
+
+  // If no odd digit found, return ""
+  return i >= 0 ? num.slice(0, i + 1) : "";
+};
+

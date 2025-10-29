@@ -1,0 +1,50 @@
+// Input: nums = [0,1,0,3,12]
+// Output: [1,3,12,0,0]
+
+let nums = [0,1,0,3,12]
+
+function zero(nums){
+    
+   let ans = [];
+   for(let i = 0 ; i < nums.length; i++){
+       if(nums[i] !== 0){
+           ans.push(nums[i])
+       }
+   }
+   let zeroCount = nums.length - ans.length;
+   for(let i = 0 ; i < zeroCount; i++ ){
+       ans.push(0)
+   }
+   for(let i = 0 ; i < nums.length; i++){
+       nums[i] = ans[i]
+   }
+}
+console.log(zero(nums))
+O(n) tc
+O(n) sc
+
+
+two Pointer optimise code
+// Input: nums = [0,1,0,3,12]
+// Output: [1,3,12,0,0]
+
+let nums = [0,1,0,3,12]
+
+function zero(nums){
+    
+   let i = 0;
+   for(let j = 0 ; j < nums.length; i++){
+       if(nums[j] !== 0){
+           nums[i] = nums[j];
+           i++
+       }
+   }
+   while(i < nums.length){
+       nums[i] = 0;
+       i++;
+   }
+   return nums
+}
+console.log(zero(nums))
+O(n) tc
+O(1) sc

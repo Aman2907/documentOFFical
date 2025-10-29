@@ -1,0 +1,42 @@
+let arr = "madama";
+
+function Palindrm(arr){
+    let clearned = arr.replace(/\s+/g, "").toLowerCase();
+    let rev = clearned.split("").reverse().join("");
+    if(rev === clearned){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+console.log(Palindrm(arr))
+
+
+
+2nd way
+
+
+let arr = "madam";
+
+let arr = "madam";
+
+function palindrome(arr){
+let safe = arr.replace(/\s+/g, "").toLowerCase();
+let first  = 0 ;
+let last = safe.length  - 1;
+
+ while(first < last )
+   {
+   if(safe[first] !== safe[last ])
+          {
+           return false; 
+           }
+        first++;
+        last--;
+     }
+return true;
+ }
+
+console.log(palindrome(arr))

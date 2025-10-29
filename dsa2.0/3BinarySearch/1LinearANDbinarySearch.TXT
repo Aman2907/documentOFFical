@@ -1,0 +1,51 @@
+
+
+let arr = [1,5,7,12,9]
+let tar = 12;
+
+Linear Search
+
+function targetArr(arr, tar){
+    for(let i = 0; i < arr.length; i++ ){
+        if(arr[i] === tar){
+            return i;
+        }
+    }
+    return -1;
+}
+
+console.log(targetArr(arr, tar))
+
+space complexity o(n)
+time complexity 0(n)
+
+
+
+
+let arr = [1,5,7,12,91]
+let tar = 12;
+
+function bin(arr, tar){
+    let start = 0;
+    let end = arr.length - 1;
+    
+    while(start <= end){
+        let mid = Math.floor((start + end) / 2)
+        
+        if(arr[mid] === tar){
+            return mid;
+        }
+        else if(arr[mid] > tar){
+            end = mid - 1;
+        }else {
+            start = mid + 1;
+        }
+    }
+    return -1;
+}
+
+Time complexity	O(log n)
+Space complexity	O(1)
+
+
+console.log(bin(arr, tar))

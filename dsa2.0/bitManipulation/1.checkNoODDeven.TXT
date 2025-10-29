@@ -1,0 +1,26 @@
+
+Brute force way
+let x = 121;
+
+function oddEven(x){
+    if(x % 2 === 0){
+        console.log("Even")
+    }else{
+        console.log("Odd")
+    }
+}
+oddEven(x)
+tc 0 (1)
+sc o(1)
+
+let x = 12;
+function oddEven(x){
+   if(x & 1){
+       console.log("Odd")
+   }else{
+       console.log("Even")
+   }
+}
+oddEven(x)
+O(1) — constant time
+O(1) space complexity

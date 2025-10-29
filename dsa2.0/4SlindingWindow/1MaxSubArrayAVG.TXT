@@ -1,0 +1,85 @@
+var arr = [2,1,5,1,3,2];
+var k = 3
+Maximum Sum Subarray of Size K
+Given an array and an integer k, find the maximum sum of any contiguous subarray of size k.
+Example: arr = [2,1,5,1,3,2], k = 3 → max sum = 9 (subarray [5,1,3])
+
+function subArr(arr, k){
+    var Maxsum = 0;
+    for(let i = 0 ; i <= arr.length - k; i++){
+        let sum = 0;
+        for(let j = i; j < i + k; j++ ){
+            sum = sum + arr[j];
+        }
+        Maxsum = Math.max(Maxsum, sum)
+    }
+    return Maxsum;
+}
+
+console.log(subArr(arr, k))
+Brute Force:
+
+Time → O(nk)
+
+Space → O(1)
+
+
+
+
+
+
+let arr = [2,1,5,1,3,2];
+var k = 3
+
+
+function subArr(arr, k){
+    let windowSum = 0;
+    for(let i = 0; i < k ; i++){
+        windowSum = windowSum + arr[i]
+    }
+    
+    let MaxSum = windowSum;
+    
+    for(let j = k; j < arr.length; j++){
+        windowSum =  windowSum - arr[j - k] + arr[j];
+        MaxSum = Math.max(windowSum, MaxSum)
+    }
+    return MaxSum;
+}
+console.log(subArr(arr, k))
+
+✅ Time Complexity = O(n)
+✅ Space Complexity = O(1)
+
+
+
+Modify version display also the subarray and maxsubarray
+let nums = [1,12,-5,-6,50,3]
+let k = 4
+
+function subArr(nums, k)
+{
+  let max  = -Infinity;
+  let maxSub = []
+  for(let i = 0 ; i <= nums.length - k; i++){
+      let sum = 0;
+      let CurrArr = []
+      for(let j = i; j < i + k; j++){
+          sum = sum + nums[j];
+          CurrArr.push(nums[j])
+      }
+       console.log("Subarray:", CurrArr);
+      if(sum > max){
+          max = sum;
+          maxSub = CurrArr;
+      }
+  }
+  console.log("Maxiun" , maxSub)
+  return max/k;
+}
+
+console.log(subArr(nums, k))
+
+Time Complexity: O(n * k)
+
+Space Complexity: O(k)

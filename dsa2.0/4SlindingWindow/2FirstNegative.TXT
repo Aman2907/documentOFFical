@@ -1,0 +1,26 @@
+// Array: [12, -1, -7, 8, -15, 30, 16, 28]
+// Window size: k = 3
+// Output: [-1, -1, -7, -15, -15, 0]
+
+let arr = [12, -1, -7, 8, -15, 30, 16, 28] 
+let k = 3;
+
+function NegArr(arr, k){
+    let subArr = [];
+    
+    for(let i = 0; i <= arr.length -  k; i++ ){
+        let firstNeg = 0;
+        for(let j = i ; j <= i + k; j++ ){
+            if(arr[j] < 0){
+                firstNeg = arr[j];
+                break;
+            }
+        }
+        subArr.push(firstNeg)
+    }
+    return subArr;
+}
+
+console.log(NegArr(arr, k))
+✅ Time Complexity: O(n*k)
+✅ Space Complexity: O(n)

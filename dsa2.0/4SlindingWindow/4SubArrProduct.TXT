@@ -1,0 +1,21 @@
+
+
+let nums = [10, 5, 2, 6];
+let k = 100;
+
+function SubArr(nums, k){
+    let count = 0;
+    for(let i = 0; i < nums.length; i++){
+        let prod = 1;
+        for(let j = i ; j < nums.length ; j++)
+        {
+        prod = prod * nums[j];
+        if(prod < k) count++;
+        else break
+        }
+    }
+    return count;
+}
+console.log(SubArr(nums, k))
+Brute force: O(n²) time, 
+O(1) space

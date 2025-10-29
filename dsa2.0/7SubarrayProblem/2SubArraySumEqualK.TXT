@@ -1,0 +1,48 @@
+Leetcode 560
+Example 1:
+
+Input: nums = [1,1,1], k = 2
+Output: 2
+Example 2:
+
+Input: nums = [1,2,3], k = 3
+Output: 2
+
+var subarraySum = function(nums, k) {
+    let count = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = i; j < nums.length; j++) {
+            let sum = 0;
+            for (let l = i; l <= j; l++) {   // sum all elements from i to j
+                sum += nums[l];
+            }
+            if (sum === k) count++;
+        }
+    }
+
+    return count;
+};
+✅ Works, but triple loop → O(n³). Very slow for large arrays.
+
+
+var subarraySum = function(nums, k) {
+    let count = 0;
+    let prefixSum = 0;
+    let map = new Map();
+    map.set(0, 1); // base case: prefix sum 0 occurs once
+
+    for (let i = 0; i < nums.length; i++) {
+        prefixSum += nums[i]; // add current element to prefix sum
+
+        if (map.has(prefixSum - k)) {
+            count += map.get(prefixSum - k); // found subarray(s) ending at i
+        }
+
+        map.set(prefixSum, (map.get(prefixSum) || 0) + 1); // store/update prefix sum count
+    }
+
+    return count;
+};
+✅ Works exactly the same as the for...of version.
+✅ Still O(n) time and O(n) space.

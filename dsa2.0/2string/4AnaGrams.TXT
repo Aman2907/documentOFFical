@@ -1,0 +1,16 @@
+// Check if Two Strings are Anagrams
+// Input: "listen", "silent" → Outpu
+
+let str1 = "Aman";
+let str2 = "naam"
+function twoAna(str1, str2){
+    
+    let sub1 = str1.replace(/\s+/g, "").toLowerCase();
+    let sub2 = str2.replace(/\s+/g, "").toLowerCase();
+    
+    if(sub1.length !== sub2.length) return ;
+    
+   return sub1.split("").sort().join() === sub2.split("").sort().join();
+}
+
+console.log(twoAna(str1,str2))

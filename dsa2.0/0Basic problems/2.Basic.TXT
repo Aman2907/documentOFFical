@@ -1,0 +1,153 @@
+let arr = [1, [2, [3, 4]], 5];
+
+// let flat  = arr.flat(depth)// depth tells how much depth u want
+let flattened = arr.flat(Infinity);
+console.log(flattened); 
+// [1, 2, 3, 4, 5]
+
+
+* Array questions
+
+   let arr = [1, 2, 3, 4, 5];
+1) Reverse an array
+    function rev(arr)
+   {
+    return arr.reverse()
+    }
+console.log(rev(arr))
+Space Complexity : O(1)
+Time Complexity: O(n)
+
+
+method 2:
+let arr = [1, 2, 3, 4, 5];
+function rev(arr)
+{
+   let rev = [];
+   for(let i  = arr.length - 1; i >= 0 ; i--){
+       rev.push(arr[i])
+   }
+   return rev;
+}
+console.log(rev(arr))
+Space Complexity : O(n)
+Time Complexity: O(n)
+
+method 3: Inplace Method (Two-Pointer Approach)
+let arr = [1, 2, 3, 4, 5];
+function rev(arr)
+{
+  let left = 0;
+  let right =  arr.length - 1;
+  while(left < right)
+     {
+      [arr[left], arr[right]] = [arr[right], arr[left]];
+      left++;
+      right--;
+      }
+  return arr
+}
+console.log(rev(arr))
+Time Complexity: O(n)
+Space Complexity: O(1)
+    
+
+2 ) find max min
+Method 1:
+// let arr = [32,11,43,54];
+// console.log(findmaxmin(arr)); // { max: 7, min: 1 }
+
+
+Method 2:
+ let arr = [32,11,43,54];
+
+function maxEle(arr){
+    let max = arr[0];
+    let min = arr[0];
+    for(let i = 0 ; i < arr.length ; i++){
+        if(arr[i] > max){
+            max = arr[i];
+        }else if(arr[i] < min){
+            min = arr[i]
+        }
+    }
+    return {max, min}
+}
+
+console.log(maxEle(arr))
+Time complexity: O(n)
+Space complexity: O(1)
+
+
+
+
+3) Second Largest Element 
+let arr = [4, 1, 3, 2, 5]
+function SecEle(arr)
+{
+  let first = [...new Set(arr)];
+  first.sort((a , b) => b - a)
+  return first[1]
+}
+console.log(SecEle(arr))
+Time compleixty O(n log n) 
+space compleixty 0(n)
+let arr = [4, 1, 3, 2, 5];
+
+
+method 2
+function secondLargest(arr) {
+    let max = -Infinity;
+    let second = -Infinity;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            second = max; // update second before first
+            max = arr[i];
+        } else if (arr[i] > second && arr[i] < max) {
+            second = arr[i];
+        }
+    }
+    return second;
+}
+console.log(secondLargest(arr)); // 4
+Time: O(n)
+Space: O(1)
+
+
+// 4 remove dublicates from array
+// let arr = [4, 1, 3, 2, 5, 1,3,1,8];
+// console.log(removeDublicate(arr))
+
+// function removeDublicate(arr) {
+//    const unqiue = [...new Set(arr)];
+//    return unqiue;
+// }
+
+
+
+
+// let arr = [1, 2, 3, 4, 5]
+// let k = 2;
+
+// // 7) Rotate an array by k positions on right means output will be [4, 5, 1, 2, 3] if k = 2
+// function rotateArray(arr, k) {
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

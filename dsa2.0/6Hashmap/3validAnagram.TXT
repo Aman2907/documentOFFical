@@ -1,0 +1,26 @@
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+    if (s.length !== t.length) return false;
+
+    const map = new Map();
+
+    // Count characters in s
+    for (let i = 0; i < s.length; i++) {
+        let char = s[i];
+        map.set(char, (map.get(char) || 0) + 1);
+    }
+
+    // Check characters in t
+    for (let i = 0; i < t.length; i++) {
+        let char = t[i];
+        if (!map.has(char)) return false; // char not found
+        map.set(char, map.get(char) - 1);
+        if (map.get(char) < 0) return false; // more occurrences in t
+    }
+
+    return true;
+};

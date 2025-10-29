@@ -1,0 +1,66 @@
+
+
+let arr = [1, 2, 3, 4, 5];
+ 1 left rotation
+ [1, 2, 3, 4, 5] → [2, 3, 4, 5, 1]
+ 2 left rotations
+ [1, 2, 3, 4, 5] → [3, 4, 5, 1, 2]
+
+
+ function leftRotate(arr) {
+     let n = arr.length;
+     let temp = []
+
+     for (let i = 1; i  n; i++) {
+         temp[i - 1] = arr[i];    shift left
+     }
+     temp[n - 1] = arr[0];        move first to last
+
+     console.log(temp);
+ }
+ time complexity o(n)
+ space complexity o(n)
+
+
+ In place
+function Solve(arr){
+    let tem = arr[0];
+    let n = arr.length;
+
+    for(let  i = 0 ; i  n; i++){
+        arr[i] = arr[i + 1]
+    }
+    arr[ n - 1] = tem;
+
+    for(let i = 0 ; i  n; i++){
+        console.log(arr[i])
+    }
+}
+
+
+ Solve(arr)
+ o(n)
+ o(1)
+
+
+
+
+function leftRotate(arr, k){
+   let n = arr.length;
+   let temp = [];
+   
+   for(let i = k; i  n; i++){
+       temp[ i - k] = arr[i];
+   }
+   
+   for(let i = 0 ; i  k; i++){
+       temp[n - k+i] = arr[i]
+   }
+   
+   return temp;
+   
+}
+
+
+ Time	O(n)
+ Space	O(n)
