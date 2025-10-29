@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+   <p id="container"></p>
+   <input type="text" id="Box">
+   <button onclick="addItem()">Click</button>
+    <script>
+    function addItem(){
+        let create = document.getElementById('Box').value;
+        let len = document.createElement('p')
+        len.textContent = create;
+        document.getElementById('container').appendChild(len)
+        document.getElementById('box').value = ""
+    }
+       
+    </script>
+</body>
+
+</html>
+
+
+
+<!-- <div id="container"></div>
+<input id="inputField" type="text" placeholder="Enter something">
+<button onclick="addItem()"> Click me</button>
+
+
+function addItem() {
+    // Create a new element
+    let inputText = document.getElementById('inputField').value;
+    let newItem = document.createElement('div');
+    newItem.textContent = inputText;
+
+    // Append the new element to the container
+    document.getElementById('container').appendChild(newItem);
+    document.getElementById('inputField').value = '';
+} -->

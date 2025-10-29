@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="par"></p>
+    <input type="text" id="jerry">
+
+    <button onclick="addItem()">Click</button>
+    <button onclick="delItem()"> Delete</button>
+
+    <script>
+
+        function addItem() {
+            let todo = document.getElementById('jerry').value;
+            let xam = document.createElement('p')
+            xam.textContent = todo;
+            xam.className = "todo-item"; 
+            document.getElementById('par').appendChild(xam)
+            document.getElementById('jerry').value = ""
+        }
+
+      
+        function delItem() {
+            let todo = document.getElementById('jerry').value;
+            let xaming = document.querySelectorAll('#par .todo-item');
+            xaming.forEach(item => {
+                if (item.textContent === todo) {
+                    item.remove();
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
