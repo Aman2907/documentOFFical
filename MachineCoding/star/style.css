@@ -1,0 +1,25 @@
+.container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .star-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .star span {
+    font-size: 40px;
+    cursor: pointer;
+  }
+  
+  .star-filled span {
+    color: gold;
+  }
+  
+  .count {
+    font-size: 20px;
+  }
+  

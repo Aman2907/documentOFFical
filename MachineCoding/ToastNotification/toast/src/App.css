@@ -1,0 +1,56 @@
+.toastContainer {
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.toast {
+    background-color: greenyellow;
+    width: 12rem;
+    padding: 1rem;
+    color: black;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    position: relative;
+    animation: slide 1s 1;
+    margin: 10px;
+    user-select: none;
+    /* Prevents the blinking | cursor */
+    pointer-events: auto;
+
+    span {
+        position: absolute;
+        right: 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        /* Optional: shows pointer on X */
+        user-select: none;
+    }
+}
+
+.success {
+    background-color: rgb(3, 240, 62);
+}
+
+.info {
+    background-color: rgba(7, 255, 255, 0.603);
+}
+
+.warning {
+    background-color: rgb(250, 246, 20);
+}
+
+.error {
+    background-color: red;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+
+}
